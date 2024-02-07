@@ -1,0 +1,280 @@
+@font-face {
+    font-family: 'Stark';
+    src: url('fonts/Stark-6p31.ttf') format('ttf'); /* Modern browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body{
+    background-image: url("afbeeldingen/iron_man_achtergrond.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height: 700px;
+
+    /* color: white; */
+
+    margin: 0 auto;
+
+    font-family: 'Stark', sans-serif;
+
+}
+
+
+header{
+    background-color: #67C7EB;
+
+    text-align: center;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+
+
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+
+}
+
+h1, h2{
+    padding: .2em;
+}
+
+h1{
+    color: white;
+}
+
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    top: -3%;
+    
+    gap: 10px;
+
+    width: 7em;
+
+
+  }
+
+article img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+article h2 {
+    text-align: center;
+    order: -1;
+  }
+  
+
+
+
+
+article:hover{
+    border: .5em solid #AA0505;
+    border-radius: 25% 0%  0%  0%;
+    box-sizing: border-box;
+}
+
+article:first-of-type{
+   left: 42%;
+}
+
+article:nth-of-type(2){
+    left: 32%;
+}
+
+article:nth-of-type(3){
+    left: 22%;
+}
+
+article:nth-of-type(4){
+    left: 12%;
+}
+
+article:nth-of-type(5){
+    left: 52%;
+}
+
+article:nth-of-type(6){
+    left: 62%;
+}
+
+article:nth-of-type(7){
+    left: 72%;
+}
+
+article:nth-of-type(8){
+    left: 82%;
+}
+
+
+
+h2{
+    color: #67C7EB;
+    background-color: #AA0505;
+    width: 5em;
+}
+
+img{
+    width: 10em;
+}
+
+
+  
+  .close {
+    color: #AA0505;
+    position: absolute;
+    right: 10px;
+    top: .2em;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #FBCA03;
+    width: 2em;
+    height: 1em;
+    
+    border-radius: 0% 20% 0% 0%;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #AA0505;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  /* Zorgt ervoor dat de main content minder zichtbaar is wanneer de model actief is */
+  .main-content-blur {
+    filter: blur(8px);
+  }
+  
+  /* Positie van de article wanneer deze geselecteerd is */
+  .selected-article {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11; 
+    
+    margin-right: 2rem;
+    order: 1;
+  }
+
+/* Achtergrondvervaging en verduistering */
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5; /* Achter de geselecteerde article en model, maar boven niet-geselecteerde articles */
+}
+
+/* Geblurde articles */
+.blur-effect {
+  filter: blur(4px);
+}
+
+/* Zorg ervoor dat de geselecteerde article en de model container niet geblurd worden en bovenop liggen */
+.model {
+  z-index: 20; /* Zorg ervoor dat de container boven de geblurde achtergrond staat */
+
+  position: fixed;
+  inset: 0;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0,0,0,0.4);
+}
+
+.model-content {
+  display: flex;
+
+  min-width: 20rem;
+  height: auto;
+}
+
+
+/* Stijl voor de model en achtergrond vervagen */
+/* .model {
+  display: none;
+  
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+} */
+
+.model-content {
+  position: relative;
+
+  background-color: #6A0C0B;
+
+  padding: 20px;
+
+  border: 1px solid #888;
+  border-radius: 20px;
+  
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.model-image-container {
+  width: 8rem;
+  aspect-ratio: 9 / 16;
+}
+
+.model-image-container img {
+  display: block;
+
+  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+}
+
+.model-description {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.model-description h3 {
+  padding: 0;
+  margin: 0;
+
+  font-size: 1.6rem;
+  color: aliceblue;
+}
+
+.model-description p {
+  padding : 0;
+  margin: 0;
+
+  text-align: left;
+
+  max-width: 20rem;
+  color: #FBCA03;
+}
